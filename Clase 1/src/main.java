@@ -10,6 +10,8 @@ public class main {
     public static void main(String[] args) {
         // Esta va ser una funcion principal
         
+        // ------------------------------------------------------------- CLASE NUMERO 1 ------------------------------------------------------------- //
+        
         int edad = 45;
         double estatura = 1.75;
         String nombre = "Josue Porres";
@@ -31,6 +33,8 @@ public class main {
         double areaTriangulo = (base * altura)/2;   // Aca se realiza una multiplicacion y una division
         
         System.out.println("El area del triangulo es de: " + areaTriangulo);
+        
+        // ------------------------------------------------------------------------------------------------------------------------------------------- //
     }
     
 }
