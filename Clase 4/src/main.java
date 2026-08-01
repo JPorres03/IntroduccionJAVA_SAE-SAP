@@ -265,52 +265,44 @@ public class main {
     
     
     public static void clase4(){
-        /*
         System.out.println("------------------------------------ VECTORES ------------------------------------");
         
+        System.out.println("------------------------------------ EJEMPLO: BUSCAR EN UN VECTOR ------------------------------------");
+        String[] frutas = {"mango", "pera", "kiwi", "uva", "melon"}; // Creamos un vector con varias frutas
+        String busqueda = "sandia"; // Valor que queremos buscar
+        boolean encontrado = false; // Indica si se encontro la fruta
+        int posicion = -1; // Guarda la posicion donde se encontro, por que es -1? // Por que si no se encuentra, la posicion no existe, y -1 es un valor que indica que no se encontro
         
-        System.out.println("------------------------------------ EJEMPLO 1 ------------------------------------");
-        String [] frutas = {"mango", "kiwi", "pera", "uva", "melon"};
-        String busqueda = "mango";
-        
-        boolean encontrado = false;
-        
-        int posicion = -1; 
-        
-        for (int i =0;  i < frutas.length; i++){
-            if(frutas[i].equals(busqueda)){
-                encontrado = true;
-                posicion = i;
-                break;        
+        for (int i = 0; i < frutas.length; i++) { // Recorremos el vector
+            if (frutas[i].equals(busqueda)) { // Comparamos cada elemento con la busqueda, equals es para comparar Strings, no se puede usar == para comparar Strings
+                encontrado = true; // Cambiamos el valor si la encontramos
+                posicion = i; // Guardamos la posicion
+                break; // Salimos del ciclo cuando ya la encontramos
             }
         }
         
-        if (encontrado){
-            System.out.println("La fruta se encontro en la poscion: " + posicion);
-        }else{
-            System.out.println("La fruta NO se encontro");
+        if (encontrado) {
+            System.out.println("Encontrado en la posicion: " + posicion);
+        } else {
+            System.out.println("No se encontro");
         }
         
+        System.out.println("------------------------------------ EJEMPLO: PROMEDIO Y NOTA MAXIMA ------------------------------------");
+        int [] notas = {85, 92, 78, 95, 88}; // Creamos un vector con varias notas
+        int suma = 0, maximo = notas[0]; // Inicializamos la suma y el valor maximo
         
-        System.out.println("------------------------------------ EJEMPLO 2 ------------------------------------");
-                
-        int [] notas = {85,92,78,95,88};
-        int suma = 0, maximo = notas[0];
-        
-        for (int nota: notas){
-            suma += nota;
-            if (nota > maximo)maximo = nota;
+        for(int nota : notas){ // Recorremos cada nota
+            suma += nota; // Acumulamos la suma
+            if (nota > maximo) maximo = nota; // Actualizamos el maximo si encontramos una mayor
         }
         
-        double promedio = (double)suma/notas.length;
+        double promedio = (double)suma / notas.length; // Calculamos el promedio
         
         System.out.println("Promedio: " + promedio);
-        System.out.println("Nota maxima: " + maximo);
+        System.out.println("Nota Maxima: " + maximo);
         
-        System.out.println("------------------------------------ EJEMPLO 3 ------------------------------------");
-        
+        System.out.println("------------------------------------ EJEMPLO: RECORRIDO DE VECTORES ------------------------------------");
         int [] nums = new int[]{10, 20, 30, 40, 50}; // Creamos un vector de numeros
-        
         for (int i = 0; i < nums.length; i++) { // Recorremos el vector de forma normal
             System.out.println("La posicion: " + i + " es igual a: " + nums[i]);
         }
@@ -323,48 +315,42 @@ public class main {
         System.out.println("----------------Con For Each------------------");
         for(int numero : nums){ // Recorremos el vector con for each
             System.out.println("numero es: " + numero);
-        }*/
-        
+        }
         
         System.out.println("------------------------------------ MATRICES ------------------------------------");
         
-        System.out.println("------------------------------------ EJEMPLO 1 ------------------------------------");
+        System.out.println("------------------------------------ EJEMPLO: VENTAS POR SEMANA ------------------------------------");
         int [][] ventas = {
             {200, 350, 150},
             {400, 220, 310},
             {180, 500, 270}
-        };
+        }; // Creamos una matriz con ventas por semana y dias
         
-        for (int i=0; i < ventas.length; i++){
-            int sumaSemana = 0;
-            for (int j=0; j < ventas[0].length; j++){
-                sumaSemana += ventas[i][j];
+        for (int i = 0; i < ventas.length; i++) { // Recorremos las filas de la matriz
+            int sumaSemana = 0; // Acumulamos la suma de cada semana
+            for (int j = 0; j < ventas[0].length; j++) { // Recorremos las columnas de cada fila
+                sumaSemana += ventas[i][j]; // Sumamos cada valor de la semana
             }
-            System.out.println("Semana " + (i + 1) + ": " + sumaSemana);
+            System.out.println("Semana " + (i + 1) + ": " + sumaSemana); // Mostramos el total de la semana
         }
         
-        System.out.println("------------------------------------ EJEMPLO 2 ------------------------------------");
+        System.out.println("------------------------------------ EJEMPLO: MATRICES CON FOR Y FOR EACH ------------------------------------");
+        int [][] mat = {{1,2,3},
+                        {4,5,6},
+                        {7,8,9}}; // Creamos una matriz de ejemplo
+        System.out.println("---------------For------------------");
         
-        int [][] mat = {
-            {1, 2, 3},
-            {4, 5, 6},
-            {7, 8, 9}
-        };
-        
-        System.out.println("/////// FOR ////////");
-        
-        for (int i= 0; i <mat.length; i++){
-            for(int j = 0; j <mat[0].length; j++){
-                System.out.print(mat[i][j] + " ");
+        for (int i = 0; i < mat.length; i++) { // Recorre las filas
+            for (int j = 0; j < mat[0].length; j++) { // Recorre las columnas
+                System.out.print(mat[i][j] + " "); // Muestra cada valor de la matriz
             }
             System.out.println();
         }
         
-        System.out.println("/////// FOR EACH ////////");
-        
-        for (int [] fila : mat){
-            for(int valor : fila){
-                System.out.print(valor + " ");
+        System.out.println("--------------For Each---------------");
+        for(int[] fila : mat){ // Recorre cada fila de la matriz
+            for(int valor : fila){ // Recorre cada valor de la fila
+                System.out.print(valor + " "); // Muestra el valor
             }
             System.out.println();
         }
